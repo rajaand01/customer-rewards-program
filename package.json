@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "eslint-fix": "eslint --fix \"src/**/*.js\"",
-    "build": "webpack-dev-server --mode production",
+    "build": "webpack --mode production",
     "coverage": "set CI=true && react-scripts --unhandled-rejections=warn test --coverage --detectOpenHandles"
   },
   "dependencies": {
