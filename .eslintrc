@@ -1,0 +1,29 @@
+{
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaVersion": 9,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
+    },
+    "extends": "react",
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "react/prop-types": "off",
+        "max-params": "off",
+        "max-nested-callbacks": [
+            2
+        ]
+    }
+}
