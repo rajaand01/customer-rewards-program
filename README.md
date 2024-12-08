@@ -34,3 +34,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run coverage`
 
 This will show the test coverage for each file.
+
+### Preview
+![image](https://github.com/user-attachments/assets/cd61a23a-f368-4f30-aa2c-fe4118614b93)
+
+### Test Coverage
+![image](https://github.com/user-attachments/assets/d7b9a06d-7c2a-4b9f-858f-873cc1ced19f)
+
