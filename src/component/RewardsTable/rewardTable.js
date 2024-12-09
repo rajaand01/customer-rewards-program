@@ -7,7 +7,7 @@
  * @description Reward Table Component
  */
 import React from "react";
-import moment from "moment";
+import dayjs from "dayjs";
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import { allTransactionTableColumn, monthlyTableColumn, totalRewardsTableCoumn } from "../../constant/constant";
@@ -68,14 +68,14 @@ export const MonthlyRewardTable = (props) => {
     const { data } = props;
 
     /* Creating a unique month and year set from data array */
-    const months = Array.from(new Set(data?.map(item => moment(item.transactionDt).format('MMMM Y'))));
+    const months = Array.from(new Set(data?.map(item => dayjs(item.transactionDt).format('MMMM YYYY'))));
     return (
         <>
             {
                 months?.map(month => {
                     /* particular month data filtered from data array */
                     const monthData = data?.filter((item) => {
-                        return moment(item.transactionDt).format('MMMM Y') === month;
+                        return dayjs(item.transactionDt).format('MMMM YYYY') === month;
                     }).map((item) => {
                         item.pts = getPoints(item.amt);
                         item.id = item.transactionId;

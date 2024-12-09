@@ -6,7 +6,7 @@
  * @author Raja Das
  * @description Reward Table Column
  */
-import moment from "moment";
+import dayjs from "dayjs";
 export const monthlyTableColumn = [
     { field: "custId", headerName: 'Customer ID', headerClassName: 'tableHeader', flex: 1 },
     { field: "name", headerName: 'Customer Name', headerClassName: 'tableHeader', flex: 1 },
@@ -17,12 +17,12 @@ export const monthlyTableColumn = [
     },
     {
         field: "transactionDt", headerName: 'Transaction Date', headerClassName: 'tableHeader', flex: 1,
-        renderCell: (params) => moment(params.value).format('DD/MM/YYYY'),
+        renderCell: (params) => dayjs(params.value).format('DD/MM/YYYY'),
         sortComparator: (a, b) => new Date(a) - new Date(b)
     },
     {
         field: "transanctionYr", headerName: 'Transaction Year', headerClassName: 'tableHeader', flex: 1,
-        renderCell: (params) => moment(params.row.transactionDt).year()
+        renderCell: (params) => dayjs(params.row.transactionDt).year()
     },
     { field: "pts", headerName: 'Points', headerClassName: 'tableHeader', flex: 1 }
 ];
@@ -38,7 +38,7 @@ export const allTransactionTableColumn = [
     { field: "name", headerName: 'Customer Name', headerClassName: 'tableHeader', flex: 1 },
     {
         field: "transactionDt", headerName: 'Purchase Date', headerClassName: 'tableHeader', flex: 1,
-        renderCell: (params) => moment(params.value).format('DD/MM/YYYY'),
+        renderCell: (params) => dayjs(params.value).format('DD/MM/YYYY'),
         sortComparator: (a, b) => (new Date(a)) - (new Date(b))
     },
     { field: "product", headerName: 'Product Purchased', headerClassName: 'tableHeader', flex: 1 },

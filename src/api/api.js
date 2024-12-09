@@ -4,7 +4,7 @@ export default function () {
             {
                 custId: "C001",
                 name: "John Doe",
-                amt: 103.2,
+                amt: 103.20,
                 product: "Mobile",
                 transactionId: "T001",
                 transactionDt: "12/01/2023"
@@ -116,7 +116,7 @@ export default function () {
             {
                 custId: "C005",
                 name: "Bob Smith",
-                amt: 143,
+                amt: 143.40,
                 product: "Television",
                 transactionId: "T015",
                 transactionDt: "12/15/2023"
@@ -132,7 +132,7 @@ export default function () {
             {
                 custId: "C002",
                 name: "Jane Smith",
-                amt: 13,
+                amt: 13.40,
                 product: "Mobile",
                 transactionId: "T017",
                 transactionDt: "12/17/2023"
@@ -212,7 +212,7 @@ export default function () {
             {
                 custId: "C002",
                 name: "Jane Smith",
-                amt: 93,
+                amt: 93.40,
                 product: "Monitor",
                 transactionId: "T027",
                 transactionDt: "12/27/2023"
@@ -252,7 +252,7 @@ export default function () {
             {
                 custId: "C002",
                 name: "Jane Smith",
-                amt: 183,
+                amt: 183.40,
                 product: "Peaker",
                 transactionId: "T032",
                 transactionDt: "01/01/2024"
@@ -300,7 +300,7 @@ export default function () {
             {
                 custId: "C003",
                 name: "Alice Johnson",
-                amt: 163,
+                amt: 163.40,
                 product: "Keyboard",
                 transactionId: "T038",
                 transactionDt: "01/07/2024"
@@ -460,7 +460,7 @@ export default function () {
             {
                 custId: "C003",
                 name: "Alice Johnson",
-                amt: 113,
+                amt: 113.40,
                 product: "Headphone",
                 transactionId: "T058",
                 transactionDt: "01/27/2024"
@@ -540,7 +540,7 @@ export default function () {
             {
                 custId: "C003",
                 name: "Alice Johnson",
-                amt: 123,
+                amt: 123.40,
                 product: "Laptop",
                 transactionId: "T068",
                 transactionDt: "02/06/2024"
@@ -572,7 +572,7 @@ export default function () {
             {
                 custId: "C002",
                 name: "Jane Smith",
-                amt: 133,
+                amt: 133.40,
                 product: "Peaker",
                 transactionId: "T072",
                 transactionDt: "02/10/2024"
@@ -604,7 +604,7 @@ export default function () {
             {
                 custId: "C001",
                 name: "John Doe",
-                amt: 133,
+                amt: 133.40,
                 product: "Laptop",
                 transactionId: "T076",
                 transactionDt: "02/14/2024"

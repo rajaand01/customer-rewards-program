@@ -5,6 +5,7 @@
  * @description Loader component
  */
 import React, { useEffect, useState } from "react";
+import { Container } from "@mui/material";
 import fetch from '../../api/api';
 import Loader from "../../component/Loader/loader";
 import { AllRewardTable, MonthlyRewardTable, TotalRewardTable } from "../../component/RewardsTable/rewardTable";
@@ -24,10 +25,10 @@ const RewardScreen = () => {
     }, []);
 
     return (
-        <div className="screenContainer">
+        <Container>
             {loading ? (
                 <div className="loaderContainer">
-                    <Loader loading={loading} />
+                    <Loader />
                 </div>
             ) : (
                 <div className="rewardsContainer">
@@ -45,7 +46,7 @@ const RewardScreen = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </Container>
     );
 };
 
