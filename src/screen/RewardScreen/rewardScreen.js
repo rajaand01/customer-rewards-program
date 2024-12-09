@@ -8,7 +8,12 @@ import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import fetch from '../../api/api';
 import Loader from "../../component/Loader/loader";
-import { AllRewardTable, MonthlyRewardTable, TotalRewardTable } from "../../component/RewardsTable/rewardTable";
+import {
+    AllRewardTable,
+    MonthlyRewardTable,
+    TotalRewardTable,
+    UserMonthlyTotalRewardTable
+} from "../../component/RewardsTable/rewardTable";
 import './styles.less';
 
 const RewardScreen = () => {
@@ -35,6 +40,10 @@ const RewardScreen = () => {
                     <div className="rewardContent">
                         <h2>User Monthly Rewards</h2>
                         <MonthlyRewardTable data={tableData} />
+                    </div>
+                    <div className="rewardContent">
+                        <h2>User Monthly Total Rewards</h2>
+                        <UserMonthlyTotalRewardTable data={tableData} />
                     </div>
                     <div className="rewardContent">
                         <h2>Total Rewards</h2>
