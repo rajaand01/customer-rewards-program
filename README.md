@@ -37,8 +37,20 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 This will show the test coverage for each file.
 
+### User Monthly Reward
+![image](https://github.com/user-attachments/assets/d7d8f9eb-64a3-4a9d-bde6-05c84f7bb986)
+
+### User Monthly Total Reward
+![image](https://github.com/user-attachments/assets/2600b4cd-7d6c-4973-a221-ea4870571d3e)
+
+### Total Rewards
+![image](https://github.com/user-attachments/assets/a628303f-5850-4b04-987c-2aaee72db09e)
+
+### All Transaction
+![image](https://github.com/user-attachments/assets/0cb5b189-78df-4f20-a616-92a67b792bd8)
+
 ### Preview
-![image](https://github.com/user-attachments/assets/cd61a23a-f368-4f30-aa2c-fe4118614b93)
+![image](https://github.com/user-attachments/assets/cede0808-d74d-4376-9a90-600ee5c2662f)
 
 ### Test Coverage
 ![image](https://github.com/user-attachments/assets/d7b9a06d-7c2a-4b9f-858f-873cc1ced19f)
