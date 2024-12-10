@@ -122,7 +122,7 @@ export const UserMonthlyTotalRewardTable = (props) => {
                 ?.map(recordItem => getPoints(recordItem.amt)).reduce((a, b) => a + b);
         });
         const totalAmt = transanctionMonths?.map(month => {
-            return userData.filter(userDataItem => dayjs(userDataItem.transactionDt).format('MMMM YYYY') === month)
+            return userData?.filter(userDataItem => dayjs(userDataItem.transactionDt).format('MMMM YYYY') === month)
                 ?.map(recordItem => recordItem.amt).reduce((a, b) => a + b);
         });
         return { id: index, name: item, custId: userData?.[0].custId, transanctionMonths, totalPts, totalAmt };
