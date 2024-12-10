@@ -87,7 +87,7 @@ export const MonthlyRewardTable = (props) => {
                     /* particular month data filtered from data array */
                     const monthData = data?.filter((item) => {
                         return dayjs(item.transactionDt).format('MMMM YYYY') === month;
-                    }).map((item) => {
+                    })?.map((item) => {
                         item.pts = getPoints(item?.amt);
                         item.id = item?.transactionId;
                         return item;
@@ -114,16 +114,16 @@ export const UserMonthlyTotalRewardTable = (props) => {
 
     const userMonthlyTotalRewardData = Array.from(new Set(data?.map(item => item.name))).map((item, index) => {
         const userData = data?.filter(userDataItem => userDataItem.name === item);
-        const transanctionMonths = Array.from(new Set(userData.map(user => {
+        const transanctionMonths = Array.from(new Set(userData?.map(user => {
             return dayjs(user?.transactionDt).format('MMMM YYYY');
         })));
         const totalPts = transanctionMonths?.map(month => {
             return userData?.filter(userDataItem => dayjs(userDataItem.transactionDt).format('MMMM YYYY') === month)
-                .map(recordItem => getPoints(recordItem.amt)).reduce((a, b) => a + b);
+                ?.map(recordItem => getPoints(recordItem.amt)).reduce((a, b) => a + b);
         });
-        const totalAmt = transanctionMonths.map(month => {
+        const totalAmt = transanctionMonths?.map(month => {
             return userData.filter(userDataItem => dayjs(userDataItem.transactionDt).format('MMMM YYYY') === month)
-                .map(recordItem => recordItem.amt).reduce((a, b) => a + b);
+                ?.map(recordItem => recordItem.amt).reduce((a, b) => a + b);
         });
         return { id: index, name: item, custId: userData?.[0].custId, transanctionMonths, totalPts, totalAmt };
     });
