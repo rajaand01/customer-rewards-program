@@ -23,14 +23,9 @@ const RewardScreen = () => {
     useEffect(() => {
         const loadData = async () => {
             setLoading(true);
-            await getUserTransaction()
-                .then(response => {
-                    setTableData(response);
-                }).catch(error => {
-                    throw new Error(error);
-                }).finally(() => {
-                    setLoading(false);
-                });
+            const data = await getUserTransaction();
+            setTableData(data);
+            setLoading(false);
         };
         loadData();
     }, []);
