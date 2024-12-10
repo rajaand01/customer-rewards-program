@@ -14,6 +14,7 @@ import {
     UserMonthlyTotalRewardTable
 } from "../../component/RewardsTable/rewardTable";
 import './styles.less';
+import { getUserTransaction } from "../../services/services";
 
 const RewardScreen = () => {
     const [loading, setLoading] = useState(false); //boolean
@@ -22,8 +23,7 @@ const RewardScreen = () => {
     useEffect(() => {
         const loadData = async () => {
             setLoading(true);
-            await fetch('./mockData.json')
-                .then(res => res.json())
+            await getUserTransaction()
                 .then(response => {
                     setTableData(response);
                 }).catch(error => {
