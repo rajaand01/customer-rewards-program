@@ -6,7 +6,6 @@
  */
 import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
-import fetch from '../../api/api';
 import Loader from "../../component/Loader/loader";
 import {
     AllRewardTable,
@@ -21,12 +20,19 @@ const RewardScreen = () => {
     const [tableData, setTableData] = useState(null); // string table data
 
     useEffect(() => {
-        setLoading(true);
-        /* fetching data */
-        fetch().then(response => {
-            setTableData(response);
-            setLoading(false);
-        });
+        const loadData = async () => {
+            setLoading(true);
+            await fetch('./mockData.json')
+                .then(res => res.json())
+                .then(response => {
+                    setTableData(response);
+                }).catch(error => {
+                    throw new Error(error);
+                }).finally(() => {
+                    setLoading(false);
+                });
+        };
+        loadData();
     }, []);
 
     return (

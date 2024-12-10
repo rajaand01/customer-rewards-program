@@ -17,17 +17,7 @@ import {
     monthlyTotalRewardsTableCoumn,
     totalRewardsTableCoumn
 } from "../../constant/constant";
-
-/* Calculation Point based on purchase */
-const getPoints = (amt) => {
-    const price = Math.floor(amt);
-    if (price >= 50 && price <= 100) {
-        return price - 50;
-    } else if (price > 100) {
-        return (2 * (price - 100) + 50);
-    }
-    return 0;
-};
+import { getPoints } from "../../utility/utility";
 
 /* Reward Table component */
 const RewardTable = (props) => {
@@ -123,7 +113,7 @@ export const UserMonthlyTotalRewardTable = (props) => {
         });
         const totalAmt = transanctionMonths?.map(month => {
             return userData?.filter(userDataItem => dayjs(userDataItem.transactionDt).format('MMMM YYYY') === month)
-                ?.map(recordItem => recordItem.amt).reduce((a, b) => a + b);
+                ?.map(recordItem => parseFloat(recordItem.amt)).reduce((a, b) => a + b);
         });
         return { id: index, name: item, custId: userData?.[0].custId, transanctionMonths, totalPts, totalAmt };
     });

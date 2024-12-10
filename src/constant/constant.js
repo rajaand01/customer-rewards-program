@@ -17,7 +17,7 @@ export const monthlyTableColumn = [
     { field: "transactionId", headerName: 'Transaction ID', headerClassName: 'tableHeader', flex: 1 },
     {
         field: "amt", headerName: 'Amount Spent', headerClassName: 'tableHeader',
-        flex: 1, align: 'right', renderCell: (params) => `$${params?.value?.toFixed(2)}`
+        flex: 1, align: 'right', renderCell: (params) => `$${parseFloat(params?.value).toFixed(2)}`
     },
     {
         field: "transactionDt", headerName: 'Transaction Date', headerClassName: 'tableHeader', flex: 1,
@@ -46,7 +46,7 @@ export const monthlyTotalRewardsTableCoumn = [
         field: "totalAmt", headerName: 'Total Amount Spent', headerClassName: 'tableHeader', flex: 1,
         align: 'right', renderCell: (params) => (
             <div>
-                {params.value?.map((item, key) => <Typography key={key}>${item.toFixed(2)}</Typography>)}
+                {params.value?.map((item, key) => <Typography key={key}>${parseFloat(item).toFixed(2)}</Typography>)}
             </div>
         )
     },
@@ -77,7 +77,7 @@ export const allTransactionTableColumn = [
     { field: "product", headerName: 'Product Purchased', headerClassName: 'tableHeader', flex: 1 },
     {
         field: "amt", headerName: 'Price', headerClassName: 'tableHeader', flex: 1,
-        renderCell: (params) => `$${params.value.toFixed(2)}`, align: 'right'
+        renderCell: (params) => `$${parseFloat(params?.value).toFixed(2)}`, align: 'right'
     },
     { field: "pts", headerName: 'Points', headerClassName: 'tableHeader', flex: 1, align: 'right' }
 ];
