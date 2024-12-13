@@ -1,3 +1,10 @@
+/**
+ * Customer Rewards Program
+ * @author Raja Das
+ * @exports ErrorBoundary
+ * @param {any} (
+ * @returns {any}
+ */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ErrorBoundary from './errorBoundary';

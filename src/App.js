@@ -1,3 +1,9 @@
+/**
+ * Customer Rewards Program
+ * @author Raja Das
+ * @exports App
+ * @returns {any}
+ */
 import React from 'react';
 import './App.less';
 import RewardScreen from './screen/RewardScreen/rewardScreen';

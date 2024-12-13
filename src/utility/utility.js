@@ -1,3 +1,13 @@
+/**
+ * Customer Rewards Program
+ * @author Raja Das
+ * @exports getPoints
+ * @param {any} amt
+ * @returns {any}
+ */
+
+import PropTypes from 'prop-types';
+
 /* Calculation Point based on purchase */
 export const getPoints = (amt) => {
     if (!isNaN(amt)) {
@@ -9,4 +19,9 @@ export const getPoints = (amt) => {
         }
         return 0;
     }
+    return 0;
+};
+
+getPoints.propTypes = {
+    amt: PropTypes.string
 };
