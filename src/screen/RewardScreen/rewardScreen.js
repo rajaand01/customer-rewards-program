@@ -22,12 +22,11 @@ import { getUserTransaction } from "../../services/services";
 const RewardScreen = () => {
     const [loading, setLoading] = useState(false); //boolean
     const [tableData, setTableData] = useState(null); // string table data
-    const [responseText, setResponseText] = useState(null);
+    const [responseText, setResponseText] = useState(null); // string response message
     useEffect(() => {
         const loadData = async () => {
             setLoading(true);
             const response = await getUserTransaction();
-            console.log(response);
             setTableData(response?.data);
             setResponseText(response?.message);
             setLoading(false);
