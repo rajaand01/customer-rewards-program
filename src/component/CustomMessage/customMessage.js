@@ -14,15 +14,14 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
-        backgroundColor: '#f0f2f5'
+        height: '100vh'
     },
     messageBox: {
         textAlign: 'center',
         backgroundColor: '#fff',
         padding: '40px',
         borderRadius: '8px',
-        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)'
+        boxShadow: '#0000004d 0 2px 16px 2px'
     },
     title: {
         fontSize: '30px',

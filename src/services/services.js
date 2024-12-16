@@ -16,7 +16,7 @@ export const getUserTransaction = () => {
             return Promise.reject(response); // reject instead of throw
         })
         .then((response) => {
-            return response;
+            return { data: null, message: "Failed to fetch data" };
         }).catch(() => {
             // return error messages, if any
             return { data: null, message: "Failed to fetch data" };
