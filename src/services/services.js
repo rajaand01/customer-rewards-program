@@ -18,7 +18,9 @@ export const getUserTransaction = () => {
         })
         .then((response) => {
             return response;
-        }).catch(() => {
+        }).catch((error) => {
+            //logging error
+            console.log(error);
             // return error messages, if any
             return { data: null, message: "Failed to fetch data" };
         }).finally(() => { });
