@@ -7,6 +7,11 @@ Given a record of every transaction during a three-month period, calculate the r
 
 A ReactJS represtation to show above scenario.
 
+### LIVE DEMO
+
+Live demo is available. You can check here - 
+https://customer-rewards-program.onrender.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -49,6 +54,12 @@ This will show the test coverage for each file.
 ### All Transaction
 ![image](https://github.com/user-attachments/assets/0cb5b189-78df-4f20-a616-92a67b792bd8)
 
+### API Error Screen
+![image](https://github.com/user-attachments/assets/a944d236-1dc9-4958-9027-03d50bd2b856)
+
+### Error Handling
+![image](https://github.com/user-attachments/assets/3e23f612-2e4a-4f46-af7d-f87c25573b68)
+
 ### Preview
 ![image](https://github.com/user-attachments/assets/cede0808-d74d-4376-9a90-600ee5c2662f)
 
@@ -56,5 +67,4 @@ This will show the test coverage for each file.
 ![image](https://github.com/user-attachments/assets/d7b9a06d-7c2a-4b9f-858f-873cc1ced19f)
 
 ### LIVE DEMO
-
 https://customer-rewards-program.onrender.com/
