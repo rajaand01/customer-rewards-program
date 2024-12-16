@@ -6,8 +6,6 @@
  * @returns {any}
  */
 
-import PropTypes from 'prop-types';
-
 /* Calculation Point based on purchase */
 export const getPoints = (amt) => {
     // Checking if the props is a number or not
@@ -21,8 +19,4 @@ export const getPoints = (amt) => {
         return 0;
     }
     return 0;
-};
-
-getPoints.propTypes = {
-    amt: PropTypes.string
 };

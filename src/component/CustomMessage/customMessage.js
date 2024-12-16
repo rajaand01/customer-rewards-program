@@ -54,4 +54,5 @@ const CustomMessage = (props) => {
 CustomMessage.propTypes = {
     message: PropTypes.string
 };
+
 export default CustomMessage;

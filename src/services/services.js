@@ -7,13 +7,14 @@
  */
 // fetching user transaction
 export const getUserTransaction = () => {
+    // this api is returning a set of user transactions
     return fetch('https://customer-transaction.onrender.com/transactionlist')
-        .then((response) => {
+        .then((res) => {
             // check response.ok
-            if (response.ok) {
-                return response.json();
+            if (res.ok) {
+                return res.json();
             }
-            return Promise.reject(response); // reject instead of throw
+            return Promise.reject(res); // reject instead of throw
         })
         .then((response) => {
             return response;
