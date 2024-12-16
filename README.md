@@ -66,5 +66,3 @@ This will show the test coverage for each file.
 ### Test Coverage
 ![image](https://github.com/user-attachments/assets/d7b9a06d-7c2a-4b9f-858f-873cc1ced19f)
 
-### LIVE DEMO
-https://customer-rewards-program.onrender.com/
