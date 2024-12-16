@@ -43,7 +43,7 @@ const CustomMessage = (props) => {
     const { message } = props;
 
     return (
-        <div style={styles.container}>
+        <div style={styles.container} data-testid="custom-message-container">
             <Paper elevation={3} style={styles.messageBox}>
                 <Typography style={styles.title}>Oops! Something went wrong</Typography>
                 <Typography style={styles.message}>{message}</Typography>

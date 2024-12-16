@@ -153,7 +153,7 @@ export const TotalRewardTable = (props) => {
 export const AllRewardTable = (props) => {
     const { data } = props;
     const allRewardData = data?.map((item) => {
-        item.pts = getPoints(item.amt);
+        item.pts = getPoints(item.amt); // Calculating point based on purchase
         item.id = item.transactionId;
         return item;
     });
