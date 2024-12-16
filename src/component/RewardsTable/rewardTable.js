@@ -18,6 +18,7 @@ import {
     totalRewardsTableCoumn
 } from "../../constant/constant";
 import { getPoints } from "../../utility/utility";
+import PropTypes from 'prop-types';
 
 /* Reward Table component */
 const RewardTable = (props) => {
@@ -64,6 +65,12 @@ const RewardTable = (props) => {
     );
 };
 
+RewardTable.propTypes = {
+    rows: PropTypes.array,
+    column: PropTypes.array,
+    dataTestId: PropTypes.string
+};
+
 /* Monthly Reward Table component */
 export const MonthlyRewardTable = (props) => {
     const { data } = props;
@@ -98,6 +105,10 @@ export const MonthlyRewardTable = (props) => {
     );
 };
 
+MonthlyRewardTable.propTypes = {
+    data: PropTypes.array
+};
+
 /* Month Wise User's Total Reward component */
 export const UserMonthlyTotalRewardTable = (props) => {
     const { data } = props;
@@ -128,6 +139,10 @@ export const UserMonthlyTotalRewardTable = (props) => {
     );
 };
 
+UserMonthlyTotalRewardTable.propTypes = {
+    data: PropTypes.array
+};
+
 /* Total Reward Table component */
 export const TotalRewardTable = (props) => {
     const { data } = props;
@@ -149,6 +164,10 @@ export const TotalRewardTable = (props) => {
     );
 };
 
+TotalRewardTable.propTypes = {
+    data: PropTypes.array
+};
+
 /* All Reward Table component */
 export const AllRewardTable = (props) => {
     const { data } = props;
@@ -166,4 +185,8 @@ export const AllRewardTable = (props) => {
             />
         </div>
     );
+};
+
+AllRewardTable.propTypes = {
+    data: PropTypes.array
 };

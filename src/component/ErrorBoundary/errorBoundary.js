@@ -5,6 +5,7 @@
  * @description ErrorBoundary component to catch component throwing error while rendering
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
     container: {
@@ -63,3 +64,7 @@ export default class ErrorBoundary extends React.Component {
         }
     }
 }
+
+ErrorBoundary.propTypes = {
+    error: PropTypes.string
+};
