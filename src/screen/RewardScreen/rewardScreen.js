@@ -24,11 +24,12 @@ const RewardScreen = () => {
     const [tableData, setTableData] = useState(null); // string table data
     const [responseText, setResponseText] = useState(null); // string response message
     useEffect(() => {
+        // fetching user transaction on component load
         const loadData = async () => {
             setLoading(true);
             const response = await getUserTransaction();
-            setTableData(response?.data);
-            setResponseText(response?.message);
+            setTableData(response?.data); // storing response data fetched from the api
+            setResponseText(response?.message); // storing response message fetched from the api
             setLoading(false);
         };
         loadData();
@@ -37,29 +38,35 @@ const RewardScreen = () => {
     return (
         <Container>
             {loading ? (
+                // Displaying Loader Component on loading
                 <div className="loaderContainer">
                     <Loader />
                 </div>
             ) : (
                 <div className="rewardsContainer">
-                    {tableData ? (<>
-                        <div className="rewardContent">
-                            <h2>User Monthly Rewards</h2>
-                            <MonthlyRewardTable data={tableData} />
-                        </div>
-                        <div className="rewardContent">
-                            <h2>User Monthly Total Rewards</h2>
-                            <UserMonthlyTotalRewardTable data={tableData} />
-                        </div>
-                        <div className="rewardContent">
-                            <h2>Total Rewards</h2>
-                            <TotalRewardTable data={tableData} />
-                        </div>
-                        <div className="rewardContent">
-                            <h2>All Transactions</h2>
-                            <AllRewardTable data={tableData} />
-                        </div>
-                    </>) : <CustomMessage message={responseText} />}
+                    {tableData ? (
+                        <>
+                            <div className="rewardContent">
+                                <h2>User Monthly Rewards</h2>
+                                <MonthlyRewardTable data={tableData} />
+                            </div>
+                            <div className="rewardContent">
+                                <h2>User Monthly Total Rewards</h2>
+                                <UserMonthlyTotalRewardTable data={tableData} />
+                            </div>
+                            <div className="rewardContent">
+                                <h2>Total Rewards</h2>
+                                <TotalRewardTable data={tableData} />
+                            </div>
+                            <div className="rewardContent">
+                                <h2>All Transactions</h2>
+                                <AllRewardTable data={tableData} />
+                            </div>
+                        </>
+                    ) : (
+                        // Showing a error screen if failed to fetch data
+                        < CustomMessage message={responseText} />
+                    )}
                 </div>
             )}
         </Container>

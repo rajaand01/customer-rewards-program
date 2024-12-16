@@ -10,8 +10,9 @@ import PropTypes from 'prop-types';
 
 /* Calculation Point based on purchase */
 export const getPoints = (amt) => {
+    // Checking if the props is a number or not
     if (!isNaN(amt)) {
-        const price = Math.floor(amt);
+        const price = Math.floor(amt); // rounding off the amt for eliminating cents
         if (price >= 50 && price <= 100) {
             return price - 50;
         } else if (price > 100) {

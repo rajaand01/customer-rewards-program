@@ -22,7 +22,7 @@ export const monthlyTableColumn = [
     {
         field: "transactionDt", headerName: 'Transaction Date', headerClassName: 'tableHeader', flex: 1,
         renderCell: (params) => dayjs(params?.value).format('DD/MM/YYYY'),
-        sortComparator: (a, b) => new Date(a) - new Date(b)
+        sortComparator: (a, b) => new Date(a) - new Date(b) // sorting based on date
     },
     {
         field: "transanctionYr", headerName: 'Transaction Year', headerClassName: 'tableHeader', flex: 1,
@@ -72,7 +72,7 @@ export const allTransactionTableColumn = [
     {
         field: "transactionDt", headerName: 'Purchase Date', headerClassName: 'tableHeader', flex: 1,
         renderCell: (params) => dayjs(params.value).format('DD/MM/YYYY'),
-        sortComparator: (a, b) => (new Date(a)) - (new Date(b))
+        sortComparator: (a, b) => (new Date(a)) - (new Date(b)) // sorting based on date
     },
     { field: "product", headerName: 'Product Purchased', headerClassName: 'tableHeader', flex: 1 },
     {
