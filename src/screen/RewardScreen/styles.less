@@ -6,9 +6,46 @@
 }
 
 .rewardsContainer {
+    margin: 20px 0;
+    .rewardsContainerHeader {
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+
+    .rewardsFilterContainer {
+        .rewardsFilterContainerHeader {
+            p {
+                font-size: 24px;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+        }
+
+        .rewardsFilterContent {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+
+            .filterInputField {
+                width: 260px;
+                margin: 0 10px;
+            }
+            .filterInputBtn {
+                width: 120px;
+                margin: 10px;
+                border-radius: 30px;
+            }
+        }
+    }
+
     .rewardContent {
         h2 {
-            font-size: 30px;
+            font-size: 24px;
+            font-weight: 600;
         }
 
         .monthlyRewardTable {

@@ -61,7 +61,12 @@ export const monthlyTotalRewardsTableCoumn = [
 ];
 
 export const totalRewardsTableCoumn = [
+    { field: "custId", headerName: 'Customer ID', headerClassName: 'tableHeader', flex: 1 },
     { field: "name", headerName: 'Customer Name', headerClassName: 'tableHeader', flex: 1 },
+    {
+        field: "totalAmt", headerName: 'Total Amount Spent', headerClassName: 'tableHeader', flex: 1, align: 'right',
+        renderCell: (params) => <Typography>${parseFloat(params.value).toFixed(2)}</Typography>
+    },
     { field: "totalPts", headerName: 'Total Reward Points', headerClassName: 'tableHeader', flex: 1, align: 'right' }
 ];
 

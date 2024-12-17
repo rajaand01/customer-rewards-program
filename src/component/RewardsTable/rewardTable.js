@@ -148,10 +148,16 @@ export const TotalRewardTable = (props) => {
     const { data } = props;
     /* Creating a new set of user from data array and calculating total rewards obtained
     per user and taking index as data grid id */
-    const totalRewardData = Array.from(new Set(data?.map(item => item.name))).map((name, index) => {
+    const totalRewardData = Array.from(new Set(data?.map(item => item.name))).map(name => {
         const custRewardArray = data?.filter(item => item.name === name);
         const totalPts = custRewardArray?.map(item => getPoints(item.amt)).reduce((a, b) => a + b);
-        return { name, totalPts, id: index };
+        const totalAmt = custRewardArray?.map(item => parseFloat(item.amt)).reduce((a, b) => a + b);
+        return {
+            name,
+            totalPts,
+            totalAmt,
+            custId: custRewardArray[0].custId,
+            id: custRewardArray[0].custId };
     });
     return (
         <div className="totalRewardTable">
