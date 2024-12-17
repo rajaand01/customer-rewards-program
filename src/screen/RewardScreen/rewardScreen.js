@@ -20,6 +20,7 @@ import CustomMessage from '../../component/CustomMessage/customMessage';
 import { getUserTransaction } from "../../services/services";
 import { filterData } from "../../utility/utility";
 import './styles.less';
+import logger from "../../utility/logger";
 
 const RewardScreen = () => {
     const [loading, setLoading] = useState(false); //boolean
@@ -27,17 +28,31 @@ const RewardScreen = () => {
         toDate: dayjs(new Date()).format('YYYY-MM-DD'), //set today's date as toDate
         fromDate: dayjs(new Date()).subtract(90, 'days').format('YYYY-MM-DD') //set 90 days prior date as fromDate
     });
-    // const [toDate, setToDate] = useState(dayjs(new Date()).format('YYYY-MM-DD')); //set today's date as toDate
-    // const [fromDate, setFromDate] = useState(dayjs(new Date()).subtract(90, 'days').format('YYYY-MM-DD')); //set 90 days prior date as fromDate
     const [tableData, setTableData] = useState(null); // array table data
     const [responseText, setResponseText] = useState(null); // string response message
 
     const loadData = async () => {
-        setLoading(true);
-        const response = await getUserTransaction();
-        setTableData(filterData(response?.data, dateState)); // storing response data fetched from the api
-        setResponseText(response?.message); // storing response message fetched from the api
-        setLoading(false);
+        setLoading(true); // set loader true while fetching the api
+        await getUserTransaction()
+            .then((res) => {
+                // check response.ok
+                if (res.ok) {
+                    return res.json();
+                }
+                return Promise.reject(res); // reject instead of throw
+            })
+            .then((response) => {
+                setTableData(filterData(response?.data, dateState)); // storing response data fetched from the api
+                setResponseText(response?.message); // storing response message fetched from the api
+            }).catch((error) => {
+                //logging error
+                logger.error('Failed to load user transactions.', error);
+                // return error messages, if any
+                setTableData(null);
+                setResponseText('Failed to fetch data');
+            }).finally(() => {
+                setLoading(false); //set loader false after api fetch is done
+            });
     };
 
     // it will show last 90 days data from today
@@ -46,13 +61,11 @@ const RewardScreen = () => {
             toDate: dayjs(new Date()).format('YYYY-MM-DD'), //set today's date as toDate
             fromDate: dayjs(new Date()).subtract(90, 'days').format('YYYY-MM-DD') //set 90 days prior date as fromDate
         });
-        loadData();
     };
 
     // handle change to update date state
     const handleChange = (e) => {
         const value = e.target.value;
-
         if (e.target.name === 'fromDate' && dayjs(value).isBefore(dateState.toDate) ||
             e.target.name === 'toDate' && dayjs(value).isAfter(dateState.fromDate)) {
             setDateState({
