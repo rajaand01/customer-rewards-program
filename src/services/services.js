@@ -8,5 +8,5 @@
 // fetching user transaction
 export const getUserTransaction = () => {
     // this api is returning a set of user transactions
-    return fetch('./data.json');
+    return fetch('https://customer-transaction.onrender.com/transactionlist');
 };
